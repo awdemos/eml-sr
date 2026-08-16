@@ -2,6 +2,14 @@
 name = "eml-sr"
 version = "0.1.0"
 edition = "2024"
+authors = ["awdemos"]
+description = "Trainable EML (Exp-Minus-Log) trees for gradient-based symbolic regression."
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/awdemos/eml-sr"
+homepage = "https://github.com/awdemos/eml-sr"
+documentation = "https://docs.rs/eml-sr"
+keywords = ["symbolic-regression", "eml", "machine-learning", "candle", "differentiable"]
+categories = ["science", "machine-learning", "mathematics"]
 
 [dependencies]
 anyhow = "1.0.104"
