@@ -93,8 +93,8 @@ fn load_csv(path: &std::path::Path) -> Result<(Vec<f64>, Vec<f64>)> {
     let mut xs = Vec::new();
     let mut ys = Vec::new();
 
-    let mut reader = csv::Reader::from_path(path)
-        .with_context(|| format!("opening CSV {}", path.display()))?;
+    let mut reader =
+        csv::Reader::from_path(path).with_context(|| format!("opening CSV {}", path.display()))?;
 
     for (idx, result) in reader.records().enumerate() {
         let record = result.with_context(|| format!("reading row {}", idx + 1))?;

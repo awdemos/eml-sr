@@ -1,7 +1,7 @@
 use candle_core::{Device, Tensor};
 use candle_nn::optim::{AdamW, Optimizer, ParamsAdamW};
-use rand::rngs::StdRng;
 use rand::SeedableRng;
+use rand::rngs::StdRng;
 
 use crate::error::{Error, Result};
 use crate::expr::Expr;
