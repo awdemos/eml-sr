@@ -159,13 +159,7 @@ impl EmlTree {
         // Build source tensor stack [n_logits, batch].
         let sources = if layer == 1 {
             // Sources: 1, x
-            Tensor::stack(
-                &[
-                    ones.clone(),
-                    x.clone(),
-                ],
-                0,
-            )?
+            Tensor::stack(&[ones.clone(), x.clone()], 0)?
         } else {
             // Sources: 1, x, child output
             let child_idx = 2 * node + if is_left { 0 } else { 1 };

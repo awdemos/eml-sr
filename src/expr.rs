@@ -53,10 +53,11 @@ impl Expr {
                 // eml(1, eml(eml(1, x), 1)) = ln(x)
                 if let Expr::Eml(inner, one1) = &b
                     && matches!(one1.as_ref(), Expr::Const(1.0))
-                        && let Expr::Eml(one2, x) = inner.as_ref()
-                            && matches!(one2.as_ref(), Expr::Const(1.0)) {
-                                return Expr::Ln(Box::new(x.simplify()));
-                            }
+                    && let Expr::Eml(one2, x) = inner.as_ref()
+                    && matches!(one2.as_ref(), Expr::Const(1.0))
+                {
+                    return Expr::Ln(Box::new(x.simplify()));
+                }
 
                 // eml(1, x) = e - ln(x)
                 if matches!(&a, Expr::Const(1.0)) {
